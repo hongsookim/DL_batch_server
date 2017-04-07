@@ -1,0 +1,196 @@
+{
+  "groups": [
+    {
+      "name": "ct",
+      "type": "com.herald.properties.CommonProperties",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "pns",
+      "type": "com.herald.properties.PnsProperties",
+      "sourceType": "com.herald.properties.PnsProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "ct.cl-register-url",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.cl-register-url",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.cl-search-url",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.cl-search-url",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.cnnapi",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.cnnapi",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.download-path",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.download-path",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.fullcsv",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.fullcsv",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.fulltsv",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.fulltsv",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.grid-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.grid-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.image-url-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.image-url-prefix",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.partialcsv",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.partialcsv",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.partialtsv",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.partialtsv",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.test_csv_full",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.test_csv_partial",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.test_tsv_full",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.test_tsv_partial",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.use_local_resource",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "ct.working_day",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.CommonProperties"
+    },
+    {
+      "name": "pns.api-url",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.api-url",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.app-key",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.app-key",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.channel-key",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.channel-key",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.enabled",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.notification-id",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.PnsProperties"
+    },
+    {
+      "name": "pns.notification-id",
+      "type": "java.lang.String",
+      "sourceType": "com.herald.properties.PnsProperties"
+    }
+  ]
+}
