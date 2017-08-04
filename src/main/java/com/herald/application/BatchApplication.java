@@ -17,7 +17,7 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.Date;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.skplanet.milab.catalog"})
+@ComponentScan(basePackages = {"com.herald"})
 public class BatchApplication {
 
     static final Logger logger = Logger.getLogger(BatchApplication.class);

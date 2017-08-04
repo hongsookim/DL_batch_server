@@ -4,7 +4,6 @@ import javax.persistence.Entity;
 
 @Entity
 public class ResultItem {
-	//prd_no,prd_nm,lctgr_nm,mctgr_nm,sctgr_nm,img_url,feat,clabel,clabel_NNDID
     public String PRD_ID;			//1369866158
     public String PRD_NM; 			//"[beyond closet SPAIN] DOG PATCH SWEAT SHIRT"
     public String LCTGR_NM;			//"디자이너 남성의류"

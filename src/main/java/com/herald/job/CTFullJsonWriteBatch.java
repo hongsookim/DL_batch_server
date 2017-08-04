@@ -18,14 +18,14 @@ import org.springframework.core.task.SimpleAsyncTaskExecutor;
 
 @Configuration
 @EnableBatchProcessing
-@ComponentScan(basePackages = {"com.skplanet.milab.catalog"})
+@ComponentScan(basePackages = {"com.herald"})
 public class CTFullJsonWriteBatch extends CTFullBatch {
 
     static final Logger logger = Logger.getLogger(CTFullJsonWriteBatch.class);
 
     @Bean
     public Job ctFullJsonWriteJob(Step ctFullJsonWriteStep) throws Exception{
-        if (CatalogProperties.USE_LOCAL_RESOURCE) {
+        if (CommonProperties.USE_LOCAL_RESOURCE) {
             return jobs.get("ctFullJsonWriteJob")
             		.start(ctFullJsonWriteStep)
             		.build();
@@ -48,7 +48,7 @@ public class CTFullJsonWriteBatch extends CTFullBatch {
                 steps.get(stepName)
                 .partitioner(slaveStepName, new MyPartitioner())
                 .step(slaveStep)
-                .gridSize(CatalogProperties.getGridSize())
+                .gridSize(CommonProperties.getGridSize())
                 .taskExecutor(new SimpleAsyncTaskExecutor());
         return partitionStepBuilder.build();
     }

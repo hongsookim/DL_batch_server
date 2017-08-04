@@ -23,22 +23,21 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class TSVFileReader<T> extends FlatFileItemReader<T> {
 
-    //CatalogProperties
     @Autowired
-    public CommonProperties CatalogProperties;
+    public CommonProperties CommonProperties;
     
     public static String DELIMITER = "\t";
 
     @Bean
     @Qualifier("tsvPartialBatchReader")
     public ItemReader<InputItem> tsvFileItemReaderPartial() throws Exception {
-        return getItemReader(CatalogProperties.getPartialtsvDownloadResource());
+        return getItemReader(CommonProperties.getPartialtsvDownloadResource());
     }
 
     @Bean
     @Qualifier("tsvFullBatchReader")
     public ItemReader<InputItem> tsvFileItemReaderFull() throws Exception {
-        return getItemReader(CatalogProperties.getFulltsvDownloadResource());
+        return getItemReader(CommonProperties.getFulltsvDownloadResource());
     }
 
     AtomicInteger readCount = new AtomicInteger();
@@ -72,7 +71,7 @@ public class TSVFileReader<T> extends FlatFileItemReader<T> {
             @Override
             public InputItem mapFieldSet(FieldSet fieldSet) throws BindException {
 
-            	InputItem item = new InputItem();
+            		InputItem item = new InputItem();
                 item.PRD_ID = fieldSet.readRawString(TSVFileHeader.PRD_ID.toString());
                 item.PRD_NM = fieldSet.readRawString(TSVFileHeader.PRD_NM.toString());
                 item.PRD_IMG_URL = fieldSet.readRawString(TSVFileHeader.PRD_IMG_URL.toString());

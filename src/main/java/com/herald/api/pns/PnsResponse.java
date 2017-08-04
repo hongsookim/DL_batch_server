@@ -2,9 +2,6 @@ package com.herald.api.pns;
 
 import java.util.List;
 
-/**
- * Created by sunho.hong on 2017. 2. 7..
- */
 public class PnsResponse {
 
     List<TypeResponse> slack;

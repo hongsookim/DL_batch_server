@@ -4,9 +4,6 @@ import java.lang.reflect.Array;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by 1002161 on 2015-08-19.
- */
 public class StringUtil {
 
     public static boolean isEmpty(Object obj) {

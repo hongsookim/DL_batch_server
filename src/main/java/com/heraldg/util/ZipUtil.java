@@ -8,9 +8,6 @@ import org.apache.commons.compress.utils.IOUtils;
 
 import java.io.*;
 
-/**
- * Created by sunho.hong on 2017. 2. 3..
- */
 public class ZipUtil {
 
     public static File unzip(File zip, File toDir) throws IOException, ArchiveException {

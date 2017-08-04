@@ -2,9 +2,6 @@ package com.herald.api.pns;
 
 import java.util.*;
 
-/**
- * Created by sunho.hong on 2017. 2. 7..
- */
 public class PnsRequest {
 
     public String notificationId;

@@ -12,9 +12,6 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * Created by sunho.hong on 2017. 2. 7..
- */
 @Component
 public class PnsApi {
 

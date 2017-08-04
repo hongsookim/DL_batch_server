@@ -27,7 +27,7 @@ public class BidbApiTest {
         properties.setClSearchUrl("http://172.21.41.115:8080/v1/soho/search/{prod_no}?weight={weight}&start={start}&end={end}");
 
         BidbApi api = new BidbApi(); 
-        api.catalogyProperties = properties;
+        api.CommonProperties = properties;
 
         String prodNo = "1516990701";
 

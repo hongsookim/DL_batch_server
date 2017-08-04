@@ -13,10 +13,10 @@ public class MlApi {
     static final Logger logger = Logger.getLogger(MlApi.class);
 
     @Autowired
-    public CommonProperties CatalogProperties;
+    public CommonProperties CommonProperties;
 
     public MlResponse extractFeature(String prod_id, String imgPath) {
-        String cnnapi = CatalogProperties.getCnnapi();
+        String cnnapi = CommonProperties.getCnnapi();
 
         MlRequest req = new MlRequest();
         req.prod_id = prod_id;

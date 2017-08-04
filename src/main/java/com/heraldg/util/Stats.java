@@ -6,9 +6,6 @@ import org.apache.log4j.Logger;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/**
- * Created by sunho.hong on 2017. 2. 7..
- */
 public class Stats {
 
     static final Logger logger = Logger.getLogger(Stats.class);

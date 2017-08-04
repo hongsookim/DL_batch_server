@@ -26,7 +26,7 @@ import org.springframework.core.task.SimpleAsyncTaskExecutor;
 
 @Configuration
 @EnableBatchProcessing
-@ComponentScan(basePackages = {"com.skplanet.milab.catalog"})
+@ComponentScan(basePackages = {"com.herald"})
 public class CTPartialBatch {
 
     static final Logger logger = Logger.getLogger(CTPartialBatch.class);
@@ -38,7 +38,7 @@ public class CTPartialBatch {
     StepBuilderFactory steps;
 
     @Autowired
-    CommonProperties CatalogProperties;
+    CommonProperties CommonProperties;
 
     @Autowired
     PnsProperties pnsProperties;
@@ -48,7 +48,7 @@ public class CTPartialBatch {
 
     @Bean
     public Job ctPartialJob(Step ctPartialFeatureExtractStep, Step ctPartialStatsStep) throws Exception{
-        if (CatalogProperties.USE_LOCAL_RESOURCE) {
+        if (CommonProperties.USE_LOCAL_RESOURCE) {
             return jobs.get("ctPartialJob")
             		.start(ctPartialFeatureExtractStep)
             		.next(ctPartialStatsStep).build();
@@ -68,7 +68,7 @@ public class CTPartialBatch {
                 steps.get("ctPartialFeatureExtractStep")
                 .partitioner("ctPartialFeatureExtractStep.slave", new MyPartitioner())
                 .step(slaveStep)
-                .gridSize(CatalogProperties.getGridSize())
+                .gridSize(CommonProperties.getGridSize())
                 .taskExecutor(new SimpleAsyncTaskExecutor());
         return partitionStepBuilder.build();
     }
@@ -83,7 +83,7 @@ public class CTPartialBatch {
 
     public Step ctPartialDownloadStep() {
         DownloadTasklet tasklet = new DownloadTasklet();
-        tasklet.setUrl(CatalogProperties.getPartialtsv(), CatalogProperties.getDownloadPath());
+        tasklet.setUrl(CommonProperties.getPartialtsv(), CommonProperties.getDownloadPath());
 
         return steps.get("downloadCTPartialTSV")
                 .tasklet(tasklet)
@@ -94,7 +94,7 @@ public class CTPartialBatch {
     @Bean
     @Qualifier("ctPartialStatsStep")
     public Step ctPartialStatsStep() {
-        StatsTasklet statsTasklet = new StatsTasklet(pnsAPi, "Category Partial", CatalogProperties.getPartialtsv());
+        StatsTasklet statsTasklet = new StatsTasklet(pnsAPi, "Category Partial", CommonProperties.getPartialtsv());
         return steps.get("ctPartialStatsStep")
                 .tasklet(statsTasklet)
                 .build();

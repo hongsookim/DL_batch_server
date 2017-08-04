@@ -43,7 +43,7 @@ public class CatalogTSVFileItemTest {
 
     public List<InputItem> getTSVItemList() throws Exception {
         TSVFileReader tsvFileReader = new TSVFileReader();
-        tsvFileReader.CatalogProperties = new CommonProperties();
+        tsvFileReader.CommonProperties = new CommonProperties();
         tsvFileReader.DELIMITER = "\t";
 
         FlatFileItemReader reader = (FlatFileItemReader) tsvFileReader.tsvFileItemReaderPartial();
@@ -76,7 +76,7 @@ public class CatalogTSVFileItemTest {
     @Test
     public void testTSVItemWriter() throws Exception {
         JsonInputFileWriter jsonFileWriter = new JsonInputFileWriter();
-        jsonFileWriter.CatalogProperties = new CommonProperties();
+        jsonFileWriter.ctProperties = new CommonProperties();
 
         ItemWriter<InputItem> writer = jsonFileWriter.tsvFileItemWriterPartial();
         assertNotNull(writer);

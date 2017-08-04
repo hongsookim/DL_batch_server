@@ -12,7 +12,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
-@ConfigurationProperties(locations = "classpath:catalog.properties", ignoreUnknownFields = false, prefix="ct")
+@ConfigurationProperties(locations = "classpath:test.properties", ignoreUnknownFields = false, prefix="ct")
 @Component
 @Data
 public class CommonProperties {

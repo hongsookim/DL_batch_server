@@ -15,7 +15,7 @@ public class BidbApi {
     static final Logger logger = Logger.getLogger(BidbApi.class);
 
     @Autowired
-    public CommonProperties catalogyProperties;
+    public CommonProperties CommonProperties;
 
     private BidbResponse registerInternal(BidbRequest req, String url) {
         RestTemplate restTemplate = new RestTemplate();
@@ -25,7 +25,7 @@ public class BidbApi {
     }
     
     public BidbResponse ctRegister(BidbRequest req) {
-        return registerInternal(req, catalogyProperties.getClRegisterUrl());
+        return registerInternal(req, CommonProperties.getClRegisterUrl());
     }
     
     public BidbResponse ctRegisterTest(String url, String prodID) {

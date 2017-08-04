@@ -26,7 +26,7 @@ import org.springframework.core.task.SimpleAsyncTaskExecutor;
 
 @Configuration
 @EnableBatchProcessing
-@ComponentScan(basePackages = {"com.skplanet.milab.catalog"})
+@ComponentScan(basePackages = {"com.herald"})
 public class CTFullBatch {
 
     static final Logger logger = Logger.getLogger(CTFullBatch.class);
@@ -38,14 +38,14 @@ public class CTFullBatch {
     StepBuilderFactory steps;
 
     @Autowired
-    CommonProperties CatalogProperties;
+    CommonProperties CommonProperties;
 
     @Autowired
     PnsApi pnsAPi;
 
     @Bean
     public Job ctFullJob(Step ctFullStep, Step ctFullStatsStep) throws Exception{
-        if (CatalogProperties.USE_LOCAL_RESOURCE) {
+        if (CommonProperties.USE_LOCAL_RESOURCE) {
             return jobs.get("ctFullJob")
                     .incrementer(new RunIdIncrementer())
                     .start(ctFullStep)
@@ -87,7 +87,7 @@ public class CTFullBatch {
 
     public Step ctFullDownloadStep() {
         DownloadTasklet tasklet = new DownloadTasklet();
-        tasklet.setUrl(CatalogProperties.getFulltsv(), CatalogProperties.getDownloadPath());
+        tasklet.setUrl(CommonProperties.getFulltsv(), CommonProperties.getDownloadPath());
 
         return steps.get("downloadCTFullTSV")
                 .tasklet(tasklet)
@@ -98,7 +98,7 @@ public class CTFullBatch {
     @Bean
     @Qualifier("ctFullStatsStep")
     public Step ctFullStatsStep() {
-        StatsTasklet statsTasklet = new StatsTasklet(pnsAPi, "Category Full", CatalogProperties.getFullcsv());
+        StatsTasklet statsTasklet = new StatsTasklet(pnsAPi, "Category Full", CommonProperties.getFullcsv());
         return steps.get("ctFullStatsStep")
                 .tasklet(statsTasklet)
                 .build();

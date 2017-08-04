@@ -12,7 +12,7 @@ import org.springframework.batch.repeat.RepeatStatus;
 public class StatsTasklet implements Tasklet {
 
     PnsApi pnsApi;
-    String batchName = "Category Batch";
+    String batchName = "Test Batch";
     String csvName;
 
     public StatsTasklet(PnsApi api, String batchName, String csvName) {

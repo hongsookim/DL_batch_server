@@ -23,21 +23,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Component
 public class CSVFileReader<T> extends FlatFileItemReader<T> {
 
-    //CatalogyProperties
     @Autowired
-    public CommonProperties CatalogyProperties;
+    public CommonProperties CommonProperties;
     
 
     @Bean
     @Qualifier("categoryPartialBatchReader")
     public ItemReader<ResultItem> csvFileItemReaderPartial() throws Exception {
-        return getItemReader(CatalogyProperties.getPartialcsvDownloadResource());
+        return getItemReader(CommonProperties.getPartialcsvDownloadResource());
     }
 
     @Bean
     @Qualifier("categoryFullBatchReader")
     public ItemReader<ResultItem> csvFileItemReaderFull() throws Exception {
-        return getItemReader(CatalogyProperties.getFullcsvDownloadResource());
+        return getItemReader(CommonProperties.getFullcsvDownloadResource());
     }
 
     AtomicInteger readCount = new AtomicInteger();

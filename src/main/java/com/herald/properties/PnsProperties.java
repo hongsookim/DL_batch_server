@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@ConfigurationProperties(locations = "classpath:catalogy.properties", ignoreUnknownFields = true, prefix="pns")
+@ConfigurationProperties(locations = "classpath:test.properties", ignoreUnknownFields = true, prefix="pns")
 @Component
 @Data
 public class PnsProperties {

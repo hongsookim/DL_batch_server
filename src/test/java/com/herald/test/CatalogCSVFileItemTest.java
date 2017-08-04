@@ -30,7 +30,7 @@ public class CatalogCSVFileItemTest {
     
     public List<ResultItem> getCSVItemList() throws Exception {
         CSVFileReader csvFileReader = new CSVFileReader();
-        csvFileReader.CatalogyProperties = new CommonProperties(); 
+        csvFileReader.CommonProperties = new CommonProperties(); 
 
         FlatFileItemReader reader = (FlatFileItemReader) csvFileReader.csvFileItemReaderPartial();
         assertNotNull(reader);
@@ -70,7 +70,7 @@ public class CatalogCSVFileItemTest {
     @Test
     public void testCSVItemWriter() throws Exception {
         JsonResultFileWriter jsonFileWriter = new JsonResultFileWriter();
-        jsonFileWriter.CatalogProperties = new CommonProperties();
+        jsonFileWriter.ctProperties = new CommonProperties();
 
         ItemWriter<ResultItem> writer = jsonFileWriter.csvFileItemWriterPartial();
         assertNotNull(writer);

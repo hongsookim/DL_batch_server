@@ -25,24 +25,24 @@ public class JsonInputFileWriter {
     static final Logger logger = Logger.getLogger(JsonInputFileWriter.class);
 
     @Autowired
-    public CommonProperties CatalogProperties;
+    public CommonProperties ctProperties;
 
     @Bean
     @Qualifier("tsvPartialBatchWriter")
     public ItemWriter<InputItem> tsvFileItemWriterPartial() throws Exception {
-        return getItemWriter(CatalogProperties.getPartialtsvDownloadResource());
+        return getItemWriter(ctProperties.getPartialtsvDownloadResource());
     }
 
     @Bean
     @Qualifier("tsvFullBatchWriter")
     public ItemWriter<InputItem> tsvFileItemWriterFull() throws Exception {
-        return getItemWriter(CatalogProperties.getFulltsvDownloadResource());
+        return getItemWriter(ctProperties.getFulltsvDownloadResource());
     }
 
     public ItemWriter<InputItem> getItemWriter(Resource resource) throws Exception {
         logger.debug("tsvFileItemWriter Start");
 
-        final File jsonPath = new File(CatalogProperties.getDownloadPath() + File.separator + resource.getFilename().replaceFirst(".tsv", ".json"));
+        final File jsonPath = new File(ctProperties.getDownloadPath() + File.separator + resource.getFilename().replaceFirst(".tsv", ".json"));
         if (jsonPath.getParentFile().exists() == false) {
             jsonPath.getParentFile().mkdirs();
         }

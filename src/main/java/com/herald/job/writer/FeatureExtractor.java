@@ -44,7 +44,6 @@ public class FeatureExtractor {
     @Qualifier("featureExtractWriter")
     public ItemWriter<InputItem> featureExtractWriter() throws Exception {
         logger.debug("ctFeatureExtractWriter Start");
-//        final File jsonPath = new File(ctProperties.getDownloadPath() + File.separator + resource.getFilename().replaceFirst(".tsv", ".json"));
         final File jsonPath = new File(ctProperties.getDownloadPath() + File.separator + "catalogue_results.csv");
         if (jsonPath.getParentFile().exists() == false) {
             jsonPath.getParentFile().mkdirs();

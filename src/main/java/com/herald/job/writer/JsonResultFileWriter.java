@@ -25,24 +25,24 @@ public class JsonResultFileWriter {
     static final Logger logger = Logger.getLogger(JsonResultFileWriter.class);
 
     @Autowired
-    public CommonProperties CatalogProperties;
+    public CommonProperties ctProperties;
 
     @Bean
     @Qualifier("ctPartialBatchWriter")
     public ItemWriter<ResultItem> csvFileItemWriterPartial() throws Exception {
-        return getItemWriter(CatalogProperties.getPartialcsvDownloadResource());
+        return getItemWriter(ctProperties.getPartialcsvDownloadResource());
     }
 
     @Bean
     @Qualifier("ctFullBatchWriter")
     public ItemWriter<ResultItem> csvFileItemWriterFull() throws Exception {
-        return getItemWriter(CatalogProperties.getFullcsvDownloadResource());
+        return getItemWriter(ctProperties.getFullcsvDownloadResource());
     }
 
     public ItemWriter<ResultItem> getItemWriter(Resource resource) throws Exception {
         logger.debug("csvFileItemWriter Start");
 
-        final File jsonPath = new File(CatalogProperties.getDownloadPath() + File.separator + resource.getFilename().replaceFirst(".csv", ".json"));
+        final File jsonPath = new File(ctProperties.getDownloadPath() + File.separator + resource.getFilename().replaceFirst(".csv", ".json"));
         if (jsonPath.getParentFile().exists() == false) {
             jsonPath.getParentFile().mkdirs();
         }
